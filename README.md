@@ -99,8 +99,10 @@ The following Vagrant providers are supported:
 ## Usage Examples
 
 ```sh
-$ make centos7
-$ make debian8-virtualbox
-$ make HEADLESS=false fedora24-64
 $ make ubuntu16.10-32-parallels
+$ make HEADLESS=false fedora24-64
+$ make debian8-virtualbox
+$ make centos7
+$ make libvirt
+$ make all
 ```

@@ -66,11 +66,35 @@ case "$PACKER_BUILDER_TYPE" in
 		;;
 
         vmware-iso)
-		# Install Open-VM-Tools.
-		apt-get --no-install-recommends -y install fuse open-vm-tools
+		# Install prerequisite.
+		apt-get --no-install-recommends -y install fuse
 
-		# Create HGFS mount point.
-		mkdir /mnt/hgfs
+		# Mount the ISO.
+		mount -o loop,ro /dev/shm/linux.iso /mnt
+
+		# Extract the tools distribution.
+		tar xzCf /tmp /mnt/VMwareTools-*.tar.gz
+
+		# Unmount the ISO.
+		umount /mnt
+
+		# Install the tools.
+		/tmp/vmware-tools-distrib/vmware-install.pl -d -f
+
+		# Reclaim some wasted disk space.
+		case $(uname -m) in
+			i686)
+				rm -r /usr/lib/vmware-tools/bin64 /usr/lib/vmware-tools/lib64
+				rm -r /usr/lib/vmware-tools/plugins64 /usr/lib/vmware-tools/sbin64
+				;;
+			x86_64)
+				rm -r /usr/lib/vmware-tools/bin32 /usr/lib/vmware-tools/lib32
+				rm -r /usr/lib/vmware-tools/plugins32 /usr/lib/vmware-tools/sbin32
+				;;
+		esac
+
+		# Remove the distribution.
+		rm -r /tmp/vmware-tools-distrib
 		;;
 esac
 

@@ -121,11 +121,8 @@ sed -i -e '/^#UseDNS yes$/s//UseDNS no/' /etc/ssh/sshd_config
 # Remove DHCP leases.
 rm -f /var/lib/NetworkManager/*
 
-# Add DEVICE specification inexplicably missing from NIC configuration.
-[ -f /etc/sysconfig/network-scripts/ifcfg-eth0 ] && sed -i '2iDEVICE="eth0"' /etc/sysconfig/network-scripts/ifcfg-eth0
-
-# Remove NIC details specific to the Packer build VM.
-sed -i -e /^HWADDR=/d -e /^UUID=/d /etc/sysconfig/network-scripts/ifcfg-$(basename /sys/class/net/e*)
+# Remove build VM NIC configuration.
+rm /etc/sysconfig/network-scripts/ifcfg-$(basename /sys/class/net/e*)
 
 # Remove Yum caches.
 rm -r /var/cache/yum/*

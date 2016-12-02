@@ -122,15 +122,11 @@ curl -LsSo /home/vagrant/.ssh/authorized_keys https://raw.github.com/mitchellh/v
 chown -R vagrant:vagrant /home/vagrant/.ssh
 chmod -R go-rwx /home/vagrant/.ssh
 
-# Turn off DNS lookups by sshd per Vagrant recommendation.
-#sed -i -e '/^#UseDNS yes$/s//UseDNS no/' /etc/ssh/sshd_config
-
 # Remove DHCP leases.
 rm -f /var/lib/NetworkManager/*
 
-
-# Remove NIC details specific to the Packer build VM.
-sed -i /^UUID=/d /etc/sysconfig/network-scripts/ifcfg-$(basename /sys/class/net/e*)
+# Remove build VM NIC configuration.
+rm /etc/sysconfig/network-scripts/ifcfg-$(basename /sys/class/net/e*)
 
 # Remove DNF caches.
 rm -r /var/cache/dnf/*

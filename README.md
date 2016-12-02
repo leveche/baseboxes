@@ -32,6 +32,8 @@ All boxes are configured as follows:
 | `debian8-64`     | Debian 8 (jessie) (amd64)                   |
 | `fedora24-32`    | Fedora 24 (i386)                            |
 | `fedora24-64`    | Fedora 24 (x86_64)                          |
+| `fedora25-32`    | Fedora 25 (i386)                            |
+| `fedora25-64`    | Fedora 25 (x86_64)                          |
 | `ubuntu14.04-32` | Ubuntu 14.04 LTS (Trusty Tahr) (i386)       |
 | `ubuntu14.04-64` | Ubuntu 14.04 LTS (Trusty Tahr) (amd64)      |
 | `ubuntu16.04-32` | Ubuntu 16.04 LTS (Xenial Xerus) (i386)      |

@@ -1,13 +1,13 @@
 {
     "variables": {
         "atlas_token": null,
-        "atlas_name": "CentOS Linux 7 (1511)",
+        "atlas_name": "CentOS Linux 7 (1611)",
         "atlas_short_description": "CentOS Linux 7",
         "atlas_username": null,
         "atlas_version": "{{isotime \"2006\"}}.{{isotime \"01\"}}.{{isotime \"02\"}}",
         "headless": "true",
-        "iso_sha256sum": "54721e5e444a3191b18b0fabe1c35e12b65f93aa31732beb7899212d19cab69b",
-        "iso_url": "http://buildlogs.centos.org/rolling/7/isos/x86_64/CentOS-7-x86_64-Minimal-1609-01.iso",
+        "iso_sha256sum": "27bd866242ee058b7a5754e83d8ee8403e216b93d130d800852a96f41c34d86a",
+        "iso_url": "http://mirrors.kernel.org/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1611.iso",
         "parallels_tools_version": null,
         "virtualbox_additions_version": null,
         "vmware_tools_version": null

@@ -1,15 +1,15 @@
 {
     "variables": {
         "atlas_token": null,
-        "atlas_name": "Debian 8.6 (jessie)",
-        "atlas_short_description": "Debian 8 (wheezy)",
+        "atlas_name": "Debian 8.7 (jessie)",
+        "atlas_short_description": "Debian 8 (jessie)",
         "atlas_username": null,
         "atlas_version": "{{isotime \"2006\"}}.{{isotime \"01\"}}.{{isotime \"02\"}}",
         "headless": "true",
-        "iso_sha256sum_32": "a9de6e4375eb752edd7c36e0e03cb2c55e8187631589b6dbf137c77452881292",
-        "iso_sha256sum_64": "9479c5c2df72ae3878116c43fb42eefae53d1fe363ce514a6afc8289064b9f5f",
-        "iso_url_32": "http://cdimage.debian.org/debian-cd/8.6.0/i386/iso-cd/debian-8.6.0-i386-netinst.iso",
-        "iso_url_64": "http://cdimage.debian.org/debian-cd/8.6.0/amd64/iso-cd/debian-8.6.0-amd64-netinst.iso",
+        "iso_sha256sum_32": "59a465eb6f84ae3f5c515ad60f8131c0b7c98482b6046fa140e801f5a857488d",
+        "iso_sha256sum_64": "5a618df1be71e13c26611ff35b39d3b5f38644c445a4d849760420ccfb734d8e",
+        "iso_url_32": "http://cdimage.debian.org/debian-cd/8.7.0/i386/iso-cd/debian-8.7.0-i386-netinst.iso",
+        "iso_url_64": "http://cdimage.debian.org/debian-cd/8.7.0/amd64/iso-cd/debian-8.7.0-amd64-netinst.iso",
         "parallels_tools_version": null,
         "virtualbox_additions_version": null,
         "vmware_tools_version": null

@@ -24,7 +24,6 @@ esac
 
 pacstrap /mnt base
 genfstab -p /mnt >> /mnt/etc/fstab
-ln -s /usr/share/zoneinfo/Etc/UTC /mnt/etc/localtime
 hostname > /mnt/etc/hostname
 cat > /mnt/etc/systemd/network/ethernet.network <<-EOF
 	[Match]

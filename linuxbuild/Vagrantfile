@@ -2,15 +2,18 @@ Vagrant.configure("2") do |config|
   config.vm.box = "wholebits/ubuntu16.10-64"
 
   config.vm.provider "vmware_fusion" do |vmware|
+    vmware.vmx["memsize"] = 2048
     vmware.vmx["vhv.enable"] = true
   end
 
   config.vm.provider "vmware_workstation" do |vmware|
+    vmware.vmx["memsize"] = 2048
     vmware.vmx["vhv.enable"] = true
   end
 
   config.vm.provider "parallels" do |parallels|
     parallels.customize [ "set", :id, "--nested-virt", "on" ]
+    parallels.memory = 2048
   end
 
   config.vm.provision :shell, inline: <<-EOF

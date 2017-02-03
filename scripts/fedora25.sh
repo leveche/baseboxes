@@ -19,16 +19,8 @@ case "$PACKER_BUILDER_TYPE" in
 		# Mount the ISO.
 		mount -o loop,ro /dev/shm/prl-tools-lin.iso /mnt
 
-		# Apply fix for Parallels Tools 12.1.2 on Linux 4.9.
-		cp -r /mnt/* /dev/shm
-		mkdir /dev/shm/tmp
-		tar xzCf /dev/shm/tmp /dev/shm/kmods/prl_mod.tar.gz
-		sed -i '386s/)/, unsigned int dummy)/' /dev/shm/tmp/prl_fs/SharedFolders/Guest/Linux/prl_fs/inode.c
-		sed -i '483s/Writable, 0,/Writable ? FOLL_WRITE : 0,/' /dev/shm/tmp/prl_tg/Toolgate/Guest/Linux/prl_tg/prltg.c
-		cd /dev/shm/tmp && tar czf /dev/shm/kmods/prl_mod_tar.gz *
-
 		# Install Parallels Tools.
-		/dev/shm/install --install-unattended
+		/mnt/install --install-unattended
 
 		# Unmount the ISO.
 		umount /mnt
